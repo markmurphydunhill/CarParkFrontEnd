@@ -1,0 +1,17 @@
+<template>
+  <require from="../resources/elements/parking-list"></require>
+  <require from="../resources/elements/parking-event"></require>
+
+
+
+  <div class="ui stackable two column grid">
+    <div class="column">
+      <parking-event parkings.bind="parkings"></parking-event>
+    </div>
+    <div class="column">
+      <parking-list parkings.bind="parkings"></parking-list>
+    </div>
+  </div>
+
+
+</template>

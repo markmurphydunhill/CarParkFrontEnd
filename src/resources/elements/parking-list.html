@@ -1,0 +1,30 @@
+<template>
+  <div class="column">
+    <h4 class="ui dividing header"> Cars Parked </h4>
+    <table class="ui celled table segment">
+      <thead>
+      <tr>
+        <th>Car Registration</th>
+        <th>Status</th>
+        <th>Car Enter Date/Time</th>
+        <th>Car Exit Date/Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr repeat.for="parking of parkings">
+        <td>
+          ${parking.carReg}
+        <td>
+          ${parking.status}
+        </td>
+        <td>
+          ${parking.carEnterDate}
+        </td>
+        <td>
+          ${parking.carExitDate}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
