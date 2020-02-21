@@ -19,6 +19,13 @@ export class App {
         moduleId: PLATFORM.moduleName('views/report'),
         nav: true,
         title: 'Parking Report'
+      },
+      {
+        route: 'logout',
+        name: 'logout',
+        moduleId: PLATFORM.moduleName('views/logout'),
+        nav: true,
+        title: 'Logout'
       }
     ]);
     this.router = router;

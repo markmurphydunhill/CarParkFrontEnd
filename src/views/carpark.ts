@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework'
- import { Parking } from '../../services/carpark-types';
+ import { Parking } from '../services/carpark-types';
 import {CarparkService} from "../services/carpark-service";
 
 
