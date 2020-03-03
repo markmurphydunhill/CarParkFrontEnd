@@ -1,6 +1,11 @@
 <template>
   <div class="column">
-    <h4 class="ui dividing header"> Cars Parked </h4>
+    <h4 class="ui dividing header"> Number of Car are is ${numberOfCars} </h4>
+    <h4 class="ui dividing header"> Number of Free Spaces is ${numberOfFreeSpaces} </h4>
+
+    <div class="value">
+      ${numberOfCars}
+    </div>
     <table class="ui celled table segment">
       <thead>
       <tr>
@@ -11,7 +16,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr repeat.for="parking of pparkings">
+      <tr repeat.for="parking of currentParkings">
         <td>
           ${parking.carReg}
         <td>

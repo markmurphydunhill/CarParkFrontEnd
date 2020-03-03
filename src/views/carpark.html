@@ -1,15 +1,20 @@
 <template>
-  <require from="../resources/elements/parking-list"></require>
+
   <require from="../resources/elements/parking-event"></require>
+  <require from="../resources/elements/parking-event-exit"></require>
+  <require from="../resources/elements/parking-list"></require>
 
 
 
-  <div class="ui stackable two column grid">
+  <div class="ui stackable three column grid">
     <div class="column">
-      <parking-event parkings.bind="parkings"></parking-event>
+      <parking-event pparkings.bind="pparkings"></parking-event>
     </div>
     <div class="column">
-      <parking-list parkings.bind="parkings"></parking-list>
+      <parking-event-exit pparkings.bind="pparkings"></parking-event-exit>
+    </div>
+    <div class="column">
+      <parking-list pparkings.bind="pparkings"></parking-list>
     </div>
   </div>
 

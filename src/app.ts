@@ -7,7 +7,14 @@ export class App {
   configureRouter(config: RouterConfiguration, router: Router) {
     config.map([
       {
-        route: ['', 'parkinglist'],
+        route: ['', 'currentParkinglist'],
+        name: 'Current Parking List',
+        moduleId: PLATFORM.moduleName('views/carparktoday'),
+        nav: true,
+        title: 'Current Parking List'
+      },
+      {
+        route: ['parkinglist'],
         name: 'Parking List',
         moduleId: PLATFORM.moduleName('views/carpark'),
         nav: true,
