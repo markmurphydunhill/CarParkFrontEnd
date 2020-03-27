@@ -3,7 +3,7 @@ import {CarparkService} from "../services/carpark-service";
 
 @inject(CarparkService)
 export class Login {
-  email = 'marge@simpson.com';
+  email = 'homer@simpson.com';
   password = 'secret';
   prompt = '';
 

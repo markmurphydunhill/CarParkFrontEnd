@@ -5,9 +5,9 @@ import {CarparkService} from "../services/carpark-service";
 
 @inject(CarparkService)
  export class Parkings {
-   pparkings: Parking[] = [];
+   parkings: Parking[] = [];
 
    constructor(private  ds:CarparkService){
-     this.pparkings = ds.pparkings
+     this.parkings = ds.parkings
    }
  }

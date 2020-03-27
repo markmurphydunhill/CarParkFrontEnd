@@ -3,5 +3,5 @@ import { Parking } from '../../services/carpark-types';
 
 export class ParkingList {
   @bindable
-  pparkings: Parking[];
+  parkings: Parking[];
 }

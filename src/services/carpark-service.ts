@@ -8,7 +8,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 
 @inject(HttpClient, EventAggregator,  Aurelia, Router)
 export class CarparkService {
-  pparkings : Parking[] = [];
+  parkings : Parking[] = [];
   currentParkings: Parking[] = [];
   numberOfSpaces = 100;
   numberOfCars =0;
@@ -25,15 +25,16 @@ export class CarparkService {
 
   {
     httpClient.configure(http => {
-      http.withBaseUrl('http://localhost:3001');
+      //http.withBaseUrl('http://localhost:3000');
+      http.withBaseUrl('https://serene-reef-97119.herokuapp.com');
     });
 
   }
 
   async getParkings() {
     const response = await this.httpClient.get('/api/parkings');
-    this.pparkings = await response.content;
-    console.log (this.pparkings);
+    this.parkings = await response.content;
+    console.log (this.parkings);
   }
 
   async getCurrentParkings() {
@@ -65,12 +66,13 @@ export class CarparkService {
       carExitDate:  carExitDate
     };
     const response = await this.httpClient.post('/api/carEntry', parking);
+    console.log(response);
     const newParking = await response.content;
-    //this.candidates.push(newCandidate);
-    this.pparkings.push(newParking);
+    this.parkings.push(newParking);
     this.currentParkings.push(newParking);
     this.numberOfCars ++;
     this.numberOfFreeSpaces --;
+    console.log(this.parkings);
 
   }
 
@@ -83,19 +85,28 @@ export class CarparkService {
     };
     const response = await this.httpClient.post('/api/carExit', parking);
     const newParking = await response.content;
+    //console.log(newParking);
     const newParkingId = newParking._id;
 
-    //const car = await this.parkings.findOne({_id: newParkingId});
-    //const car = await this.pparkings.findOne({_id: newParkingId});
-    //const user = this.users.get(email);
-   // const car = this.parkings.get(newParking._id);
 
-   // car.carExitDate = newParking.carExitDate;
-   // car.status = newParking.status;
-    //console.log(car);
-   // await car.save();
+    this.numberOfCars --;
+    this.numberOfFreeSpaces ++;
 
-    //this.parkings.push(newParking);
+   const car = await this.parkings.find(i => i._id === newParkingId);
+
+    car.carExitDate = response.content.carExitDate;
+    car.status = false;
+
+    for(var i=0; i < this.currentParkings.length; i++) {
+      if(this.currentParkings[i]._id == newParkingId)
+      {
+        this.currentParkings.splice(i,1);
+      }
+    }
+
+
+
+    console.log(car);
 
   }
 

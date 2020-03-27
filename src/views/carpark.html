@@ -6,17 +6,24 @@
 
 
 
-  <div class="ui stackable three column grid">
+  <div class="ui stackable two column grid">
     <div class="column">
-      <parking-event pparkings.bind="pparkings"></parking-event>
+      <parking-event parkings.bind="parkings"></parking-event>
     </div>
     <div class="column">
-      <parking-event-exit pparkings.bind="pparkings"></parking-event-exit>
+      <parking-event-exit parkings.bind="parkings"></parking-event-exit>
     </div>
+
+  </div>
+
+  <div class="ui stackable one column grid">
+
+
     <div class="column">
-      <parking-list pparkings.bind="pparkings"></parking-list>
+      <parking-list parkings.bind="parkings"></parking-list>
     </div>
   </div>
+
 
 
 </template>

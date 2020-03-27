@@ -1,27 +1,19 @@
 <template>
 
 <div class="ui container">
-  <section class="ui raised segment">
-    <h3 class="ui header"> Car Park </h3>
-  </section>
+
   <div class="ui basic segment">
     <div class="ui stackable two column grid">
       <div class="column">
         <form submit.trigger="addParking()" class="ui form stacked segment">
           <h3 class="ui dividing header"> Add a Car Entry </h3>
+
           <div class="field">
             <label>Car Reg </label> <input value.bind="carReg">
           </div>
-          <div class="field">
-            <label>Status </label> <input value.bind="status">
-          </div>
-          <div class="field">
-            <label>Enter date/time </label> <input value.bind="carEnterDate">
-          </div>
-          <div class="field">
-            <label>Exit date/time </label> <input value.bind="carExitDate">
-          </div>
+
           <button class="ui blue submit button">Add</button>
+
         </form>
       </div>
 
